@@ -5,21 +5,21 @@
 class Ireaver < Formula
   desc "MacOS Photos backup export tool."
   homepage ""
-  version "1.0.1"
+  version "1.0.0"
   license "MIT"
 
   on_macos do
-    if Hardware::CPU.arm?
-      url "https://github.com/Celtech/iReaver/releases/1.0.1/iReaver_1.0.1_Darwin_arm64.tar.gz"
-      sha256 "fd2b24a7d2eb8b4a1a58dcfc1b129952330c97db45a220334257518e737cee39"
+    if Hardware::CPU.intel?
+      url "https://github.com/Celtech/iReaver/releases/download/v1.0.0/iReaver_1.0.0_Darwin_x86_64.tar.gz"
+      sha256 "15e51e9bf0d3c293f3e9df2ffc37d9ae8d1d87642d80fe87efdce57aad8cabf9"
 
       def install
         bin.install "iReaver"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/Celtech/iReaver/releases/1.0.1/iReaver_1.0.1_Darwin_x86_64.tar.gz"
-      sha256 "c699c259ce3ce431cd769c536a3c7154c33ce710ea674842b1393dee777c8acc"
+    if Hardware::CPU.arm?
+      url "https://github.com/Celtech/iReaver/releases/download/v1.0.0/iReaver_1.0.0_Darwin_arm64.tar.gz"
+      sha256 "be4019efc5f43d2c4b9ef469069a44b3e8192783250ea0be931df3ff84456bcf"
 
       def install
         bin.install "iReaver"
@@ -28,17 +28,17 @@ class Ireaver < Formula
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/Celtech/iReaver/releases/1.0.1/iReaver_1.0.1_Linux_x86_64.tar.gz"
-      sha256 "2668c98ea042bc17be842917d36d614f8406e46ffa884cb769a9fe68db108503"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/Celtech/iReaver/releases/download/v1.0.0/iReaver_1.0.0_Linux_arm64.tar.gz"
+      sha256 "e26f691536b17f87dc810e20d9a8db6963361f200ff3077e24184b8ecf971a49"
 
       def install
         bin.install "iReaver"
       end
     end
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/Celtech/iReaver/releases/1.0.1/iReaver_1.0.1_Linux_arm64.tar.gz"
-      sha256 "ac526bc1e727854704df3492b75e1593fcc1044c3a0ca3c048a2962cf83155f9"
+    if Hardware::CPU.intel?
+      url "https://github.com/Celtech/iReaver/releases/download/v1.0.0/iReaver_1.0.0_Linux_x86_64.tar.gz"
+      sha256 "a4deb7f13adf1b20a2aad9dd1ae62b1b5d92dacf90e5533a0d9c2b74389fc116"
 
       def install
         bin.install "iReaver"
