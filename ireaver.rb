@@ -5,40 +5,22 @@
 class Ireaver < Formula
   desc "MacOS Photos backup export tool."
   homepage ""
-  version "1.0.0"
+  version "1.0.1"
   license "MIT"
+  depends_on :macos
 
   on_macos do
-    if Hardware::CPU.intel?
-      url "https://github.com/Celtech/iReaver/releases/download/v1.0.0/iReaver_1.0.0_Darwin_x86_64.tar.gz"
-      sha256 "15e51e9bf0d3c293f3e9df2ffc37d9ae8d1d87642d80fe87efdce57aad8cabf9"
-
-      def install
-        bin.install "iReaver"
-      end
-    end
     if Hardware::CPU.arm?
-      url "https://github.com/Celtech/iReaver/releases/download/v1.0.0/iReaver_1.0.0_Darwin_arm64.tar.gz"
-      sha256 "be4019efc5f43d2c4b9ef469069a44b3e8192783250ea0be931df3ff84456bcf"
-
-      def install
-        bin.install "iReaver"
-      end
-    end
-  end
-
-  on_linux do
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/Celtech/iReaver/releases/download/v1.0.0/iReaver_1.0.0_Linux_arm64.tar.gz"
-      sha256 "e26f691536b17f87dc810e20d9a8db6963361f200ff3077e24184b8ecf971a49"
+      url "https://github.com/Celtech/iReaver/releases/download/v1.0.1/iReaver_1.0.1_Darwin_arm64.tar.gz"
+      sha256 "6f1d082a3f7e0b83fd6643e107eeed7f58a264a18988fb2731cb3c3c0036e150"
 
       def install
         bin.install "iReaver"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/Celtech/iReaver/releases/download/v1.0.0/iReaver_1.0.0_Linux_x86_64.tar.gz"
-      sha256 "a4deb7f13adf1b20a2aad9dd1ae62b1b5d92dacf90e5533a0d9c2b74389fc116"
+      url "https://github.com/Celtech/iReaver/releases/download/v1.0.1/iReaver_1.0.1_Darwin_x86_64.tar.gz"
+      sha256 "b904300f5b8a52ea58ae79e8a839f7dda34bc07079ec99e021d3ad93c60e6cdb"
 
       def install
         bin.install "iReaver"
